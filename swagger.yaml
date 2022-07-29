@@ -141,8 +141,6 @@ paths:
           description: Invalid Fields
         '500':
           description: Internal Server Error
-          
-  /user/profile/transaction?startDate={startDate}&endDate={endDate}:
     get:
       security:
         - Bearer: []
@@ -156,12 +154,12 @@ paths:
           description: Attach Bearer JWT token
           type: string
           required: true
-        - in: path
+        - in: query
           name: startDate
           description: The debut of transactions (Day/Month/Year)
           type: string
           required: true
-        - in: path
+        - in: query
           name: endDate
           description: The end of transactions (Day/Month/Year)
           type: string
@@ -177,7 +175,7 @@ paths:
           description: Invalid Fields
         '500':
           description: Internal Server Error
-  /user/profile/transaction?id={id}:
+  /user/profile/transaction/{id}:
     get:
       security:
         - Bearer: []
